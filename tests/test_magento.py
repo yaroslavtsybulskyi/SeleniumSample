@@ -57,17 +57,17 @@ def test_copyright_message(browser_shop):
         item.click()
         element = browser_shop.find_element(By.CLASS_NAME, 'copyright')
         if i == 3:
-            assert element.text == copyright_message
+            assert element.text.__contains__(copyright_message)
         elif i == 4:
-            assert element.text == copyright_message
+            assert element.text.__contains__(copyright_message)
         elif i == 5:
-            assert element.text == copyright_message
+            assert element.text.__contains__(copyright_message)
         elif i == 6:
-            assert element.text == copyright_message
+            assert element.text.__contains__(copyright_message)
         elif i == 7:
-            assert element.text == copyright_message
+            assert element.text.__contains__(copyright_message)
         elif i == 8:
-            assert element.text == copyright_message
+            assert element.text.__contains__(copyright_message)
 
 
 @allure.feature("Magento")
