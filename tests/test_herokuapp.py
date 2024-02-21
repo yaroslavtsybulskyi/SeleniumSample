@@ -32,13 +32,25 @@ def test_button_clicks_incognito(incognito):
         btn.click()
 
         if i == 1:
-            assert incognito.current_url == "https://the-internet.herokuapp.com/floating_menu#home"
+            assert (
+                incognito.current_url
+                == "https://the-internet.herokuapp.com/floating_menu#home"
+            )
         elif i == 2:
-            assert incognito.current_url == "https://the-internet.herokuapp.com/floating_menu#news"
+            assert (
+                incognito.current_url
+                == "https://the-internet.herokuapp.com/floating_menu#news"
+            )
         elif i == 3:
-            assert incognito.current_url == "https://the-internet.herokuapp.com/floating_menu#contact"
+            assert (
+                incognito.current_url
+                == "https://the-internet.herokuapp.com/floating_menu#contact"
+            )
         elif i == 4:
-            assert incognito.current_url == "https://the-internet.herokuapp.com/floating_menu#about"
+            assert (
+                incognito.current_url
+                == "https://the-internet.herokuapp.com/floating_menu#about"
+            )
 
 
 @allure.feature("Herokuapp Website")
@@ -50,13 +62,25 @@ def test_button_clicks_headless(headless):
         btn.click()
 
         if i == 1:
-            assert headless.current_url == "https://the-internet.herokuapp.com/floating_menu#home"
+            assert (
+                headless.current_url
+                == "https://the-internet.herokuapp.com/floating_menu#home"
+            )
         elif i == 2:
-            assert headless.current_url == "https://the-internet.herokuapp.com/floating_menu#news"
+            assert (
+                headless.current_url
+                == "https://the-internet.herokuapp.com/floating_menu#news"
+            )
         elif i == 3:
-            assert headless.current_url == "https://the-internet.herokuapp.com/floating_menu#contact"
+            assert (
+                headless.current_url
+                == "https://the-internet.herokuapp.com/floating_menu#contact"
+            )
         elif i == 4:
-            assert headless.current_url == "https://the-internet.herokuapp.com/floating_menu#about"
+            assert (
+                headless.current_url
+                == "https://the-internet.herokuapp.com/floating_menu#about"
+            )
 
 
 @allure.feature("Herokuapp Website")
@@ -68,13 +92,25 @@ def test_button_clicks_headless_incognito(headless_incognito):
         btn.click()
 
         if i == 1:
-            assert headless_incognito.current_url == "https://the-internet.herokuapp.com/floating_menu#home"
+            assert (
+                headless_incognito.current_url
+                == "https://the-internet.herokuapp.com/floating_menu#home"
+            )
         elif i == 2:
-            assert headless_incognito.current_url == "https://the-internet.herokuapp.com/floating_menu#news"
+            assert (
+                headless_incognito.current_url
+                == "https://the-internet.herokuapp.com/floating_menu#news"
+            )
         elif i == 3:
-            assert headless_incognito.current_url == "https://the-internet.herokuapp.com/floating_menu#contact"
+            assert (
+                headless_incognito.current_url
+                == "https://the-internet.herokuapp.com/floating_menu#contact"
+            )
         elif i == 4:
-            assert headless_incognito.current_url == "https://the-internet.herokuapp.com/floating_menu#about"
+            assert (
+                headless_incognito.current_url
+                == "https://the-internet.herokuapp.com/floating_menu#about"
+            )
 
 
 @allure.feature("Herokuapp Website")
@@ -97,7 +133,9 @@ def test_floating_menu_headless(headless):
 @allure.story("Headless Incognito Mode")
 @allure.title("Test Floating menu with Headless Incognito Mode")
 def test_floating_menu_headless_incognito(headless_incognito):
-    floating_menu = headless_incognito.find_element(By.XPATH, '//*[@id="content"]/div/h3')
+    floating_menu = headless_incognito.find_element(
+        By.XPATH, '//*[@id="content"]/div/h3'
+    )
     assert floating_menu.text == "Floating Menu"
 
 
@@ -121,7 +159,9 @@ def test_powered_by_headless(headless):
 @allure.story("Headless Incognito Mode")
 @allure.title("Test Powered by with Headless Incognito Mode")
 def test_powered_by_headless_incognito(headless_incognito):
-    powered_by = headless_incognito.find_element(By.XPATH, '//*[@id="page-footer"]/div/div')
+    powered_by = headless_incognito.find_element(
+        By.XPATH, '//*[@id="page-footer"]/div/div'
+    )
     assert powered_by.text == "Powered by Elemental Selenium"
 
 
@@ -134,13 +174,13 @@ def test_menu_is_displayed_incognito(incognito):
         btn.click()
 
         if i == 1:
-            assert incognito.find_element(By.ID, 'menu').is_displayed()
+            assert incognito.find_element(By.ID, "menu").is_displayed()
         elif i == 2:
-            assert incognito.find_element(By.ID, 'menu').is_displayed()
+            assert incognito.find_element(By.ID, "menu").is_displayed()
         elif i == 3:
-            assert incognito.find_element(By.ID, 'menu').is_displayed()
+            assert incognito.find_element(By.ID, "menu").is_displayed()
         elif i == 4:
-            assert incognito.find_element(By.ID, 'menu').is_displayed()
+            assert incognito.find_element(By.ID, "menu").is_displayed()
 
 
 @allure.feature("Herokuapp Website")
@@ -152,13 +192,13 @@ def test_menu_is_displayed_headless(headless):
         btn.click()
 
         if i == 1:
-            assert headless.find_element(By.ID, 'menu').is_displayed()
+            assert headless.find_element(By.ID, "menu").is_displayed()
         elif i == 2:
-            assert headless.find_element(By.ID, 'menu').is_displayed()
+            assert headless.find_element(By.ID, "menu").is_displayed()
         elif i == 3:
-            assert headless.find_element(By.ID, 'menu').is_displayed()
+            assert headless.find_element(By.ID, "menu").is_displayed()
         elif i == 4:
-            assert headless.find_element(By.ID, 'menu').is_displayed()
+            assert headless.find_element(By.ID, "menu").is_displayed()
 
 
 @allure.feature("Herokuapp Website")
@@ -170,10 +210,10 @@ def test_menu_is_displayed_headless_incognito(headless_incognito):
         btn.click()
 
         if i == 1:
-            assert headless_incognito.find_element(By.ID, 'menu').is_displayed()
+            assert headless_incognito.find_element(By.ID, "menu").is_displayed()
         elif i == 2:
-            assert headless_incognito.find_element(By.ID, 'menu').is_displayed()
+            assert headless_incognito.find_element(By.ID, "menu").is_displayed()
         elif i == 3:
-            assert headless_incognito.find_element(By.ID, 'menu').is_displayed()
+            assert headless_incognito.find_element(By.ID, "menu").is_displayed()
         elif i == 4:
-            assert headless_incognito.find_element(By.ID, 'menu').is_displayed()
+            assert headless_incognito.find_element(By.ID, "menu").is_displayed()

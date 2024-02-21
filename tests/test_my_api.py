@@ -5,7 +5,7 @@ import allure
 @allure.feature("My Api")
 @allure.story("Status Code")
 @allure.title("Test valid request")
-@pytest.mark.parametrize('extension', [('jpeg'), ('webp'), ('svg'), ('png')])
+@pytest.mark.parametrize("extension", [("jpeg"), ("webp"), ("svg"), ("png")])
 def test_status_code(my_api, extension):
     response = my_api.get_image_format(extension)
     assert response.status_code == 200
@@ -14,7 +14,7 @@ def test_status_code(my_api, extension):
 @allure.feature("My Api")
 @allure.story("Status Code")
 @allure.title("Test invalid request")
-@pytest.mark.parametrize('extension', [('jpeg1'), ('wrbp'), ('srvg'), ('pgng')])
+@pytest.mark.parametrize("extension", [("jpeg1"), ("wrbp"), ("srvg"), ("pgng")])
 def test_status_code_wrong_extension(my_api, extension):
     with pytest.raises(ValueError) as e:
         my_api.get_image_format(extension)
@@ -24,13 +24,13 @@ def test_status_code_wrong_extension(my_api, extension):
 @allure.feature("My Api")
 @allure.story("Content-type")
 @allure.title("Test content-type")
-@pytest.mark.parametrize('extension', [('jpeg'), ('webp'), ('svg'), ('png')])
+@pytest.mark.parametrize("extension", [("jpeg"), ("webp"), ("svg"), ("png")])
 def test_header_content(my_api, extension):
     response = my_api.get_image_format(extension)
-    if extension == 'svg':
-        assert response.headers['Content-Type'] == f"image/{extension}+xml"
+    if extension == "svg":
+        assert response.headers["Content-Type"] == f"image/{extension}+xml"
     else:
-        assert response.headers['Content-Type'] == f"image/{extension}"
+        assert response.headers["Content-Type"] == f"image/{extension}"
 
 
 @allure.feature("My Api")
@@ -70,7 +70,7 @@ def test_status_code_webp(my_api):
 @allure.title("Test Content-type jpeg")
 def test_content_type_jpeg(my_api):
     response = my_api.get_jpeg()
-    assert response.headers['Content-Type'] == "image/jpeg"
+    assert response.headers["Content-Type"] == "image/jpeg"
 
 
 @allure.feature("My Api")
@@ -78,7 +78,7 @@ def test_content_type_jpeg(my_api):
 @allure.title("Test Content-type png")
 def test_content_type_png(my_api):
     response = my_api.get_png()
-    assert response.headers['Content-Type'] == "image/png"
+    assert response.headers["Content-Type"] == "image/png"
 
 
 @allure.feature("My Api")
@@ -86,7 +86,7 @@ def test_content_type_png(my_api):
 @allure.title("Test Content-type webp")
 def test_content_type_webp(my_api):
     response = my_api.get_webp()
-    assert response.headers['Content-Type'] == "image/webp"
+    assert response.headers["Content-Type"] == "image/webp"
 
 
 @allure.feature("My Api")
@@ -94,7 +94,7 @@ def test_content_type_webp(my_api):
 @allure.title("Test Content-type svg")
 def test_content_type_svg(my_api):
     response = my_api.get_svg()
-    assert response.headers['Content-Type'] == "image/svg+xml"
+    assert response.headers["Content-Type"] == "image/svg+xml"
 
 
 @allure.feature("My Api")
@@ -110,4 +110,4 @@ def test_get_image_status_code(my_api):
 @allure.title("Test Get image Content-type")
 def test_get_image_content(my_api):
     response = my_api.get_image()
-    assert response.headers['Content-Type'] == "image/webp"
+    assert response.headers["Content-Type"] == "image/webp"

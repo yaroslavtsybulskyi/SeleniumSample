@@ -92,4 +92,3 @@ def delassus_browser():
 @pytest.fixture()
 def my_api():
     return My_Api()
-
